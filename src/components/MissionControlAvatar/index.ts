@@ -1,0 +1,1 @@
+export { MissionControlAvatar } from "./MissionControlAvatar"

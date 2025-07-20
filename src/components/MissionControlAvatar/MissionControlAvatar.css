@@ -1,0 +1,29 @@
+.avatar {
+  --width: 128px;
+  --border: 8px;
+}
+
+.hexagon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.hexagon--black {
+  width: calc(var(--width) + var(--border));
+  background-color: var(--color-primary-bg);
+}
+
+.hexagon--gold {
+  width: calc(var(--width) + var(--border) * 2);
+  background-color: var(--color-secondary-text);
+}
+
+.avatar img {
+  width: var(--width);
+  aspect-ratio: 1;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
