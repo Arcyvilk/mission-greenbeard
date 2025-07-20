@@ -17,7 +17,7 @@ export const dialogue: Dialogue[] = [
     conditions: [],
   },
   {
-    id: "earthwoman",
+    id: "baron",
     text: "Our third agent is known under the codename EARTHWOMAN. She’s a baroness gone rogue, and she was last seen wandering deep in the caves, frantically yelling “MANDATE: MAKE CAGES”. Given how hostile the planet is, we would not be surprised if she stumbled upon a prison.",
     conditions: [],
   },
