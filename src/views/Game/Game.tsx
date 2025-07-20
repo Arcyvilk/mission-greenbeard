@@ -11,8 +11,8 @@ export const Game = () => {
   const [selectedDwarf, setSelectedDwarf] = useState<DwarfId | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(Boolean(selectedDwarf))
 
-  const dialogue = useMemo(() => {
-    return getStep(currentStepId)?.text ?? ""
+  const { text, index } = useMemo(() => {
+    return getStep(currentStepId)!
   }, [currentStepId, getStep])
 
   const onClick = (dwarfId: DwarfId) => {
@@ -36,21 +36,37 @@ export const Game = () => {
         dwarfId={selectedDwarf!}
       />
 
-      <MissionControlDialogue dialogue={dialogue} />
+      <MissionControlDialogue dialogue={text} />
 
       <div className="seats">
-        <Seat dwarfId="chef" style={{ marginLeft: "0.0%" }} onClick={onClick} />
-        <Seat
-          dwarfId="driller"
-          style={{ marginLeft: "0.6%", marginRight: "0.2%" }}
-          onClick={onClick}
-        />
-        <Seat dwarfId="baron" style={{ marginRight: "1%" }} onClick={onClick} />
-        <Seat
-          dwarfId="slayer"
-          style={{ marginRight: "1%" }}
-          onClick={onClick}
-        />
+        {index >= 1 && (
+          <Seat
+            dwarfId="chef"
+            style={{ marginLeft: "16.5%" }}
+            onClick={onClick}
+          />
+        )}
+        {index >= 2 && (
+          <Seat
+            dwarfId="driller"
+            style={{ marginLeft: "0.6%", marginRight: "0.2%" }}
+            onClick={onClick}
+          />
+        )}
+        {index >= 3 && (
+          <Seat
+            dwarfId="baron"
+            style={{ marginRight: "1%" }}
+            onClick={onClick}
+          />
+        )}
+        {index >= 4 && (
+          <Seat
+            dwarfId="slayer"
+            style={{ marginRight: "1%" }}
+            onClick={onClick}
+          />
+        )}
       </div>
     </div>
   )

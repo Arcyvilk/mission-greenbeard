@@ -16,12 +16,12 @@ export const Seat = ({ dwarfId, style, onClick }: SeatProps) => {
   }
 
   const isFound = getDwarfStatus(dwarfId)
-
   const isHighlighted = getIsHightlighted()
 
   return (
     <button
       onClick={() => onClick(dwarfId)}
+      disabled={isFound}
       className={`seat ${isHighlighted ? "seat--highlight" : ""} ${
         isFound ? "seat--found" : ""
       }`}

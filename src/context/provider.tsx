@@ -8,7 +8,7 @@ export type ContextType = {
   currentStepId: string
   lastUnlockedStepId: string
   goToNextStep: () => void
-  getStep: (stepId: string) => Dialogue | undefined
+  getStep: (stepId: string) => (Dialogue & { index: number }) | undefined
 
   findDwarf: (dwarfId: DwarfId) => void
   getDwarfStatus: (dwarfId: DwarfId) => boolean
@@ -26,8 +26,12 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     LS_CURRENT_STEP_ID,
     lastUnlockedStepId
   )
-  const getStep = (stepId: string): Dialogue | undefined => {
-    return dialogue.find((step) => step.id === stepId)
+  const getStep = (
+    stepId: string
+  ): (Dialogue & { index: number }) | undefined => {
+    const step = dialogue.find((s) => s.id === stepId)!
+    const stepIndex = dialogue.findIndex((s) => s.id === stepId) ?? -1
+    return { ...step, index: stepIndex }
   }
 
   const goToNextStep = () => {
