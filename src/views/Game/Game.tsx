@@ -11,7 +11,10 @@ export const Game = () => {
   }, [currentStepId, getStep])
 
   return (
-    <div className="game">
+    <div
+      className="game"
+      style={{ backgroundImage: `url("./assets/bg01.png")` }}
+    >
       <MissionControlDialogue key={currentStepId} dialogue={dialogue} />
     </div>
   )
