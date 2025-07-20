@@ -3,7 +3,7 @@
   max-width: 100%;
   aspect-ratio: 1280 / 720;
 
-  border: 10px groove var(--color-primary-text);
+  border: 10px groove var(--color-secondary-text);
   background-image: url("./assets/bg01.png");
   background-repeat: no-repeat;
   background-position: center;
