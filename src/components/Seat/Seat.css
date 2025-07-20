@@ -8,6 +8,7 @@
 }
 
 .seat--highlight,
+.seat--found,
 .seat:hover {
   background: rgba(255, 0, 0, 0.2);
 
@@ -37,6 +38,12 @@
   );
   animation: seat-flicker 0.8s infinite;
 }
+
+.seat--found,
+.seat--found:hover {
+  background: rgba(0, 255, 64, 0.1);
+}
+
 
 @keyframes seat-flicker {
   0% { opacity: 1; }

@@ -33,20 +33,24 @@ export const Game = () => {
         key={selectedDwarf}
         isOpen={isModalOpen}
         onClose={onModalClose}
-        dwarfId={selectedDwarf}
+        dwarfId={selectedDwarf!}
       />
 
       <MissionControlDialogue dialogue={dialogue} />
 
       <div className="seats">
-        <Seat owner="chef" style={{ marginLeft: "0.0%" }} onClick={onClick} />
+        <Seat dwarfId="chef" style={{ marginLeft: "0.0%" }} onClick={onClick} />
         <Seat
-          owner="driller"
+          dwarfId="driller"
           style={{ marginLeft: "0.6%", marginRight: "0.2%" }}
           onClick={onClick}
         />
-        <Seat owner="baron" style={{ marginRight: "1%" }} onClick={onClick} />
-        <Seat owner="slayer" style={{ marginRight: "1%" }} onClick={onClick} />
+        <Seat dwarfId="baron" style={{ marginRight: "1%" }} onClick={onClick} />
+        <Seat
+          dwarfId="slayer"
+          style={{ marginRight: "1%" }}
+          onClick={onClick}
+        />
       </div>
     </div>
   )

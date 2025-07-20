@@ -4,23 +4,27 @@ import type { DwarfId } from "../../data/dwarves"
 import "./Seat.css"
 
 type SeatProps = {
-  owner: DwarfId
+  dwarfId: DwarfId
   style: CSSProperties
   onClick: (dwarfId: DwarfId) => void
 }
-export const Seat = ({ owner, style, onClick }: SeatProps) => {
-  const { currentStepId } = useAppContext()
+export const Seat = ({ dwarfId, style, onClick }: SeatProps) => {
+  const { currentStepId, getDwarfStatus } = useAppContext()
 
   const getIsHightlighted = () => {
-    if (owner === currentStepId) return true
+    if (dwarfId === currentStepId) return true
   }
+
+  const isFound = getDwarfStatus(dwarfId)
 
   const isHighlighted = getIsHightlighted()
 
   return (
     <button
-      onClick={() => onClick(owner)}
-      className={`seat ${isHighlighted ? "seat--highlight" : ""}`}
+      onClick={() => onClick(dwarfId)}
+      className={`seat ${isHighlighted ? "seat--highlight" : ""} ${
+        isFound ? "seat--found" : ""
+      }`}
       style={style}
     />
   )

@@ -1,13 +1,15 @@
 import { useState, type ChangeEvent, type MouseEvent } from "react"
 import { dwarves, type DwarfId } from "../../data/dwarves"
+import { useAppContext } from "../../context"
 import "./DwarfInfo.css"
 
 type DwarfInfoProps = {
-  dwarfId: DwarfId | null
+  dwarfId: DwarfId
   isOpen: boolean
   onClose: (e: MouseEvent<HTMLDivElement>) => void
 }
 export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
+  const { findDwarf } = useAppContext()
   const [submittedCoordinates, setSubmittedCoordinates] = useState("")
   const {
     codename = "N/A",
@@ -24,7 +26,10 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
 
   const onSubmit = () => {
     if (submittedCoordinates !== coordinates) alert("WRONG :C")
-    else alert("RIGHT :3")
+    else {
+      findDwarf(dwarfId)
+      alert("YAY!")
+    }
   }
 
   if (!isOpen) return null

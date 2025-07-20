@@ -2,6 +2,7 @@ import { type PropsWithChildren } from "react"
 import { AppContext } from "./context"
 import { dialogue, type Dialogue } from "../data/dialogue"
 import { useLocalStorage } from "../utils/useLocalStorage"
+import type { DwarfId } from "../data/dwarves"
 
 export type ContextType = {
   currentStepId: string
@@ -9,14 +10,8 @@ export type ContextType = {
   goToNextStep: () => void
   getStep: (stepId: string) => Dialogue | undefined
 
-  hasChef?: boolean
-  hasDriller?: boolean
-  hasBaron?: boolean
-  hasSlayer?: boolean
-  setHasChef?: (value: boolean) => void
-  setHasDriller?: (value: boolean) => void
-  setHasBaron?: (value: boolean) => void
-  setHasSlayer?: (value: boolean) => void
+  findDwarf: (dwarfId: DwarfId) => void
+  getDwarfStatus: (dwarfId: DwarfId) => boolean
 }
 
 export const AppContextProvider = ({ children }: PropsWithChildren) => {
@@ -31,11 +26,6 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     LS_CURRENT_STEP_ID,
     lastUnlockedStepId
   )
-  const [hasChef, setHasChef] = useLocalStorage("found-chef", "false")
-  const [hasDriller, setHasDriller] = useLocalStorage("found-driller", "false")
-  const [hasBaron, setHasBaron] = useLocalStorage("found-baron", "false")
-  const [hasSlayer, setHasSlayer] = useLocalStorage("found-slayer", "false")
-
   const getStep = (stepId: string): Dialogue | undefined => {
     return dialogue.find((step) => step.id === stepId)
   }
@@ -82,14 +72,14 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     lastUnlockedStepId,
     goToNextStep,
     getStep,
-    hasChef: hasChef === "true",
-    hasDriller: hasDriller === "true",
-    hasBaron: hasBaron === "true",
-    hasSlayer: hasSlayer === "true",
-    setHasChef: (value: boolean) => setHasChef(value.toString()),
-    setHasDriller: (value: boolean) => setHasDriller(value.toString()),
-    setHasBaron: (value: boolean) => setHasBaron(value.toString()),
-    setHasSlayer: (value: boolean) => setHasSlayer(value.toString()),
+
+    getDwarfStatus: (dwarfId: DwarfId) => {
+      const value = window.localStorage.getItem(`found-${dwarfId}`)
+      return value === "true"
+    },
+    findDwarf: (dwarfId: DwarfId) => {
+      window.localStorage.setItem(`found-${dwarfId}`, "true")
+    },
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
