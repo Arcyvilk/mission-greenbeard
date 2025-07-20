@@ -17,12 +17,18 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
   }
 
   return (
-    <div className="container" onClick={onClick}>
+    <div className="container">
       <div className="mcAvatar">
         <MissionControlAvatar />
       </div>
 
-      <h2>Mission Control</h2>
+      <div className="container__title">
+        <h2>Mission Control</h2>
+        <button className="skipButton" onClick={onClick}>
+          Next →
+        </button>
+      </div>
+
       <p>
         {isTyping ? (
           <TypeAnimation sequence={[dialogue]} speed={66} />

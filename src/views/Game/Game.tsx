@@ -36,7 +36,7 @@ export const Game = () => {
         dwarfId={selectedDwarf!}
       />
 
-      <MissionControlDialogue dialogue={text} />
+      <MissionControlDialogue key={currentStepId} dialogue={text} />
 
       <div className="seats">
         {getIsStepPassed("chef") && (
