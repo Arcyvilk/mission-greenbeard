@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { TypeAnimation } from "react-type-animation"
-import { dialogue } from "../../data/dialogue"
 import { useAppContext } from "../../context"
 import { MissionControlAvatar } from "../MissionControlAvatar"
-
 import "./MissionControlDialogue.css"
 
-export const MissionControlDialogue = () => {
-  const { currentStepIndex, goToNextStep } = useAppContext()
+export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
+  const { goToNextStep } = useAppContext()
   const [isTyping, setIsTyping] = useState(true)
-
-  const currentDialogue = dialogue[currentStepIndex].text
-
-  useEffect(() => {
-    setIsTyping(true)
-  }, [currentStepIndex])
 
   const onClick = () => {
     if (isTyping) {
@@ -33,9 +25,9 @@ export const MissionControlDialogue = () => {
       <div className="title">Mission Control</div>
       <div className="description">
         {isTyping ? (
-          <TypeAnimation sequence={[currentDialogue]} speed={66} />
+          <TypeAnimation sequence={[dialogue]} speed={66} />
         ) : (
-          currentDialogue
+          dialogue
         )}
       </div>
     </div>

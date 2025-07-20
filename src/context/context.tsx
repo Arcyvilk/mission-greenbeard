@@ -1,9 +1,5 @@
 import { createContext, useContext } from "react"
-
-export type ContextType = {
-  currentStepIndex: number
-  goToNextStep: () => void
-}
+import { type ContextType } from "./provider"
 
 export const AppContext = createContext({} as ContextType)
 export const useAppContext = (): ContextType => useContext(AppContext)

@@ -5,22 +5,6 @@
   width: 100%;
 }
 
-.app {
-  width: 1280px;
-  max-width: 100%;
-  aspect-ratio: 1280 / 800;
-  padding: 24px;
-
-  display: flex;
-  flex-direction: column;
-
-  border: 10px groove var(--color-secondary-text);
-  background-image: url("./assets/bg01.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 .warning {
   color: var(--color-primary-text);
   font-size: 48px;
