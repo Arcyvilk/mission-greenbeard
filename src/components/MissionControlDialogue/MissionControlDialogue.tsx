@@ -1,5 +1,11 @@
-import s from "./MissionControlDialogue.module.scss"
+import { MissionControlAvatar } from "../MissionControlAvatar"
+import "./MissionControlDialogue.css"
 
 export const MissionControlDialogue = () => {
-  return <div className={s.container}>Mission Control Dialogue</div>
+  return (
+    <div className="container">
+      <MissionControlAvatar />
+      <div className="title">Mission Control</div>
+    </div>
+  )
 }

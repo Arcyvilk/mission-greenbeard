@@ -1,3 +1,12 @@
 .container {
-  border: 10px groove $color-primary-text;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-secondary-bg);
+  color: var(--color-primary-text);
+}
+
+
+.title {
+  color: var(--color-secondary-text);
+  font-size: 24px;
 }
