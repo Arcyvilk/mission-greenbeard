@@ -1,5 +1,6 @@
 import { dialogue } from "../../data/dialogue"
 import { MissionControlAvatar } from "../MissionControlAvatar"
+import { TypeAnimation } from "react-type-animation"
 
 import "./MissionControlDialogue.css"
 
@@ -13,7 +14,9 @@ export const MissionControlDialogue = () => {
       </div>
 
       <div className="title">Mission Control</div>
-      <div className="description">{currentDialogue}</div>
+      <div className="description">
+        <TypeAnimation sequence={[currentDialogue]} speed={66} />
+      </div>
     </div>
   )
 }
