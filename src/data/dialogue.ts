@@ -2,7 +2,7 @@ export type Dialogue = { id: string; text: string }
 
 export const dialogue: Dialogue[] = [
   {
-    id: "mission-01",
+    id: "start",
     text: "Congratulations on signing on for Deep Rock Galactic, miner, and welcome on board. I am afraid we don’t have time for settling in, and have to dive straight into a crucial mission. We lost contact with four of our best agents during an attempt to retrieve an ancient Dwarven treasure. We think they got distracted and got lost one by one. You have to retrieve them ASAP - the planet Fornebu is known to be extremely hostile to any lifeforms.",
   },
   {
