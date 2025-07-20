@@ -3,6 +3,7 @@
 :root {
   font-family: "Smooch Sans", sans-serif;
   box-sizing: border-box;
+  user-select: none;
 
   * {
     box-sizing: border-box;
