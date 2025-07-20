@@ -31,7 +31,10 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
 
       <p>
         {isTyping ? (
-          <TypeAnimation sequence={[dialogue]} speed={66} />
+          <TypeAnimation
+            sequence={[dialogue, () => setIsTyping(false)]}
+            speed={66}
+          />
         ) : (
           dialogue
         )}
