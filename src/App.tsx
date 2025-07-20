@@ -1,6 +1,6 @@
 import { MissionControlDialogue } from "./components/MissionControlDialogue"
 import { useScreenWidth } from "./utils/useScreenWidth"
-
+import { AppContextProvider } from "./context"
 import "./App.css"
 
 export const App = () => {
@@ -16,8 +16,10 @@ export const App = () => {
     )
 
   return (
-    <div className="app">
-      <MissionControlDialogue />
-    </div>
+    <AppContextProvider>
+      <div className="app">
+        <MissionControlDialogue />
+      </div>
+    </AppContextProvider>
   )
 }
