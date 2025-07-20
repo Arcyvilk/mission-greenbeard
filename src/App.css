@@ -1,7 +1,9 @@
-#root {
+.app {
   width: 1280px;
   max-width: 100%;
   aspect-ratio: 1280 / 720;
+
+  padding: 24px;
 
   border: 10px groove var(--color-secondary-text);
   background-image: url("./assets/bg01.png");
