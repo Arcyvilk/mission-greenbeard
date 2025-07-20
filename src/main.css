@@ -1,6 +1,7 @@
 @import "./styles/main.css";
 
 :root {
+  font-family: "Smooch Sans", sans-serif;
   box-sizing: border-box;
 
   * {

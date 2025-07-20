@@ -1,4 +1,8 @@
 #root {
+  width: 100%;
+}
+
+.app {
   width: 1280px;
   max-width: 100%;
   aspect-ratio: 1280 / 800;
@@ -12,6 +16,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
 
-  font-family: "Smooch Sans", sans-serif;
+.warning {
+  color: var(--color-primary-text);
+  font-size: 48px;
+  text-align: center;
 }
