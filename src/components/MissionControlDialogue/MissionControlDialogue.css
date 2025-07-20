@@ -19,17 +19,3 @@
   left: -72px;
   top: -36px;
 }
-
-.title {
-  color: var(--color-secondary-text);
-
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.description {
-  color: var(--color-primary-text);
-
-  font-size: 24px;
-}

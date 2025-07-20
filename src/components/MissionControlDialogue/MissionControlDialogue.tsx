@@ -22,14 +22,14 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
         <MissionControlAvatar />
       </div>
 
-      <div className="title">Mission Control</div>
-      <div className="description">
+      <h2>Mission Control</h2>
+      <p>
         {isTyping ? (
           <TypeAnimation sequence={[dialogue]} speed={66} />
         ) : (
           dialogue
         )}
-      </div>
+      </p>
     </div>
   )
 }

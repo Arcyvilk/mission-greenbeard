@@ -1,12 +1,14 @@
 import type { CSSProperties } from "react"
-import "./Seat.css"
 import { useAppContext } from "../../context"
+import type { DwarfId } from "../../data/dwarves"
+import "./Seat.css"
 
 type SeatProps = {
-  owner: "chef" | "driller" | "baron" | "slayer"
+  owner: DwarfId
   style: CSSProperties
+  onClick: (dwarfId: DwarfId) => void
 }
-export const Seat = ({ owner, style }: SeatProps) => {
+export const Seat = ({ owner, style, onClick }: SeatProps) => {
   const { currentStepId } = useAppContext()
 
   const getIsHightlighted = () => {
@@ -16,7 +18,8 @@ export const Seat = ({ owner, style }: SeatProps) => {
   const isHighlighted = getIsHightlighted()
 
   return (
-    <div
+    <button
+      onClick={() => onClick(owner)}
       className={`seat ${isHighlighted ? "seat--highlight" : ""}`}
       style={style}
     />
