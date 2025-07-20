@@ -11,7 +11,7 @@
   flex: 0 1 auto;
 
   background: var(--color-secondary-bg);
-  background: linear-gradient(180deg,rgba(26, 49, 24, 0.75) 85%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg,rgba(14, 32, 12, 0.75) 85%, rgba(0, 0, 0, 0) 100%);
 }
 
 .container__title {
@@ -24,12 +24,16 @@
 .skipButton {
   all: unset;
   cursor: pointer;
-  padding: 4px 12px;
+  padding: 2px 12px;
   border: 2px solid var(--color-secondary-text);
   background-color: var(--color-primary-bg);
   color: var(--color-secondary-text);
   font-size: 24px;
   text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--color-secondary-bg);
+  }
 }
 
 .mcAvatar {
