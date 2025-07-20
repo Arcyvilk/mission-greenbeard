@@ -7,11 +7,11 @@ import type { DwarfId } from "../../data/dwarves"
 import "./Game.css"
 
 export const Game = () => {
-  const { currentStepId, getStep } = useAppContext()
+  const { currentStepId, getIsStepPassed, getStep } = useAppContext()
   const [selectedDwarf, setSelectedDwarf] = useState<DwarfId | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(Boolean(selectedDwarf))
 
-  const { text, index } = useMemo(() => {
+  const { text } = useMemo(() => {
     return getStep(currentStepId)!
   }, [currentStepId, getStep])
 
@@ -39,28 +39,28 @@ export const Game = () => {
       <MissionControlDialogue dialogue={text} />
 
       <div className="seats">
-        {index >= 1 && (
+        {getIsStepPassed("chef") && (
           <Seat
             dwarfId="chef"
             style={{ marginLeft: "16.5%" }}
             onClick={onClick}
           />
         )}
-        {index >= 2 && (
+        {getIsStepPassed("driller") && (
           <Seat
             dwarfId="driller"
             style={{ marginLeft: "0.6%", marginRight: "0.2%" }}
             onClick={onClick}
           />
         )}
-        {index >= 3 && (
+        {getIsStepPassed("baron") && (
           <Seat
             dwarfId="baron"
             style={{ marginRight: "1%" }}
             onClick={onClick}
           />
         )}
-        {index >= 4 && (
+        {getIsStepPassed("slayer") && (
           <Seat
             dwarfId="slayer"
             style={{ marginRight: "1%" }}

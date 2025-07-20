@@ -7,8 +7,10 @@ import type { DwarfId } from "../data/dwarves"
 export type ContextType = {
   currentStepId: string
   lastUnlockedStepId: string
+
+  getIsStepPassed: (stepId: string) => boolean
+  getStep: (stepId: string) => Dialogue | undefined
   goToNextStep: () => void
-  getStep: (stepId: string) => (Dialogue & { index: number }) | undefined
 
   findDwarf: (dwarfId: DwarfId) => void
   getDwarfStatus: (dwarfId: DwarfId) => boolean
@@ -26,12 +28,8 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     LS_CURRENT_STEP_ID,
     lastUnlockedStepId
   )
-  const getStep = (
-    stepId: string
-  ): (Dialogue & { index: number }) | undefined => {
-    const step = dialogue.find((s) => s.id === stepId)!
-    const stepIndex = dialogue.findIndex((s) => s.id === stepId) ?? -1
-    return { ...step, index: stepIndex }
+  const getStep = (stepId: string): Dialogue | undefined => {
+    return dialogue.find((s) => s.id === stepId)
   }
 
   const goToNextStep = () => {
@@ -47,6 +45,13 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     const nextStepId = dialogue[nextStepIndex].id
     setCurrentStepId(nextStepId)
     updateLastUnlockedStep(nextStepId)
+  }
+
+  const getIsStepPassed = (stepId: string) => {
+    const currentStepIndex = dialogue.findIndex((s) => s.id === currentStepId)
+    const stepIndex = dialogue.findIndex((s) => s.id === stepId)
+
+    return currentStepIndex >= stepIndex
   }
 
   const getIsConditionsFulfilled = (stepId: string) => {
@@ -74,8 +79,10 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
   const value: ContextType = {
     currentStepId,
     lastUnlockedStepId,
-    goToNextStep,
+
+    getIsStepPassed,
     getStep,
+    goToNextStep,
 
     getDwarfStatus: (dwarfId: DwarfId) => {
       const value = window.localStorage.getItem(`found-${dwarfId}`)
