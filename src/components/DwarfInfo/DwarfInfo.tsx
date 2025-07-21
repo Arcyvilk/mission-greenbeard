@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type MouseEvent } from "react"
 import { dwarves, type DwarfId } from "../../data/dwarves"
 import { useAppContext } from "../../context"
 import "./DwarfInfo.css"
+import { Button } from "../Button"
 
 type DwarfInfoProps = {
   dwarfId: DwarfId
@@ -56,7 +57,7 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
             <h2>Coordinates:</h2>
             <div className="row">
               <input value={submittedCoordinates} onChange={onChange} />
-              <button onClick={onSubmit}>Submit coordinates</button>
+              <Button label="Submit coordinates" onClick={onSubmit} />
             </div>
           </div>
         </div>
