@@ -2,11 +2,16 @@ import { useEffect, useState } from "react"
 
 export const useScreenWidth = () => {
   const [width, setWidth] = useState(window.innerWidth)
+  const [height, setHeight] = useState(window.innerHeight)
 
-  const isMobile = width <= 800
+  const isMobile = width <= 800 || height <= 800
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth)
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
+    }
+
     window.addEventListener("resize", handleResize)
 
     return () => {
