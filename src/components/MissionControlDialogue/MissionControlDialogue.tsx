@@ -3,6 +3,7 @@ import { TypeAnimation } from "react-type-animation"
 import { useAppContext } from "../../context"
 import { MissionControlAvatar } from "../MissionControlAvatar"
 import "./MissionControlDialogue.css"
+import { Button } from "../Button"
 
 export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
   const { goToNextStep } = useAppContext()
@@ -25,9 +26,7 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
 
         <div className="mcd__title">
           <h2>Mission Control</h2>
-          <button className="mcd__skipButton" onClick={onClick}>
-            Next →
-          </button>
+          <Button label="Next →" onClick={onClick} />
         </div>
 
         <p>

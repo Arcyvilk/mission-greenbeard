@@ -1,0 +1,14 @@
+.button {
+  all: unset;
+  cursor: pointer;
+  padding: 2px 12px;
+  border: 2px solid var(--color-secondary-text);
+  background-color: var(--color-primary-bg);
+  color: var(--color-secondary-text);
+  font-size: 24px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--color-secondary-bg);
+  }
+}
