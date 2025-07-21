@@ -1,10 +1,15 @@
-.container {
+.mcd {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 64px 32px 32px 100px;
+}
+
+.mcd__container {
+  position: relative;
   padding: 12px 12px 48px 100px;
-  margin: 32px;
-  top: 32px;
-  left: 68px;
-  min-width: 90%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -14,14 +19,14 @@
   background: linear-gradient(180deg,rgba(14, 32, 12, 0.75) 85%, rgba(0, 0, 0, 0) 100%);
 }
 
-.container__title {
+.mcd__title {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
 }
 
-.skipButton {
+.mcd__skipButton {
   all: unset;
   cursor: pointer;
   padding: 2px 12px;
@@ -36,7 +41,8 @@
   }
 }
 
-.mcAvatar {
+
+.mcd__avatar {
   position: absolute;
   left: -72px;
   top: -36px;

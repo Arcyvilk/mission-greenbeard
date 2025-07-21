@@ -17,28 +17,30 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
   }
 
   return (
-    <div className="container">
-      <div className="mcAvatar">
-        <MissionControlAvatar />
-      </div>
+    <div className="mcd">
+      <div className="mcd__container">
+        <div className="mcd__avatar">
+          <MissionControlAvatar />
+        </div>
 
-      <div className="container__title">
-        <h2>Mission Control</h2>
-        <button className="skipButton" onClick={onClick}>
-          Next →
-        </button>
-      </div>
+        <div className="mcd__title">
+          <h2>Mission Control</h2>
+          <button className="mcd__skipButton" onClick={onClick}>
+            Next →
+          </button>
+        </div>
 
-      <p>
-        {isTyping ? (
-          <TypeAnimation
-            sequence={[dialogue, () => setIsTyping(false)]}
-            speed={66}
-          />
-        ) : (
-          dialogue
-        )}
-      </p>
+        <p>
+          {isTyping ? (
+            <TypeAnimation
+              sequence={[dialogue, () => setIsTyping(false)]}
+              speed={66}
+            />
+          ) : (
+            dialogue
+          )}
+        </p>
+      </div>
     </div>
   )
 }
