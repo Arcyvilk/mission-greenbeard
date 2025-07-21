@@ -17,7 +17,6 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
     coordinates = "N/A",
     imgSrc = "",
     lastSeen = "N/A",
-    likes = "N/A",
   } = dwarves.find((d) => d.id === dwarfId) ?? {}
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -51,9 +50,6 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
             <p>{codename}</p>
             <h2>LAST SEEN:</h2>
             <p>{lastSeen}</p>
-            <h2>LIKES:</h2>
-            <p>{likes}</p>
-            <hr />
             <h2>Coordinates:</h2>
             <div className="row">
               <input value={submittedCoordinates} onChange={onChange} />

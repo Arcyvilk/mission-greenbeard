@@ -4,7 +4,6 @@ export type Dwarf = {
   coordinates: string
   imgSrc: string
   lastSeen: string
-  likes: string
 }
 
 export type DwarfId = "chef" | "driller" | "baron" | "slayer"
@@ -17,7 +16,6 @@ export const dwarves: Dwarf[] = [
     imgSrc: "",
     lastSeen:
       "Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We suspect he might’ve went to forage some local plants.",
-    likes: "",
   },
   {
     id: "driller",
@@ -26,7 +24,6 @@ export const dwarves: Dwarf[] = [
     imgSrc: "",
     lastSeen:
       "He was last seen drilling aimlessly into a wall, mumbling to himself about mushrooms and being rich. The entry to his tunnel had been spotted high up the ceiling of the cave, carved in a white limestone.",
-    likes: "",
   },
   {
     id: "baron",
@@ -35,7 +32,6 @@ export const dwarves: Dwarf[] = [
     imgSrc: "",
     lastSeen:
       "She was last seen wandering deep in the caves, frantically yelling “MANDATE: MAKE CAGES”. Given how hostile the planet is, we would not be surprised if she stumbled upon a prison.",
-    likes: "",
   },
   {
     id: "slayer",
@@ -44,6 +40,5 @@ export const dwarves: Dwarf[] = [
     imgSrc: "",
     lastSeen:
       "At some point he had lost his axe, stuck in a head of some sturdy octopedal monster. He was last seen chasing the monster, attempting to retrieve his weapon.",
-    likes: "",
   },
 ]
