@@ -5,10 +5,16 @@ import "./Seat.css"
 
 type SeatProps = {
   dwarfId: DwarfId
-  style: CSSProperties
+  seatStyle: CSSProperties
+  dwarfStyle: CSSProperties
   onClick: (dwarfId: DwarfId) => void
 }
-export const Seat = ({ dwarfId, style, onClick }: SeatProps) => {
+export const Seat = ({
+  dwarfId,
+  seatStyle,
+  dwarfStyle,
+  onClick,
+}: SeatProps) => {
   const { currentStepId, getDwarfStatus } = useAppContext()
 
   const getIsHightlighted = () => {
@@ -19,13 +25,20 @@ export const Seat = ({ dwarfId, style, onClick }: SeatProps) => {
   const isHighlighted = getIsHightlighted()
 
   return (
-    <button
-      onClick={() => onClick(dwarfId)}
-      disabled={isFound}
-      className={`seat ${isHighlighted ? "seat--highlight" : ""} ${
-        isFound ? "seat--found" : ""
-      }`}
-      style={style}
-    />
+    <div className="seatContainer" style={seatStyle}>
+      <img
+        className={`dwarf ${isFound ? "" : "dwarf--hidden"}`}
+        src="/assets/chef.png"
+        style={dwarfStyle}
+      />
+
+      <button
+        className={`seat ${isHighlighted ? "seat--highlight" : ""} ${
+          isFound ? "seat--found" : ""
+        }`}
+        disabled={isFound}
+        onClick={() => onClick(dwarfId)}
+      />
+    </div>
   )
 }

@@ -2,12 +2,15 @@ import { useState } from "react"
 import { TypeAnimation } from "react-type-animation"
 import { useAppContext } from "../../context"
 import { MissionControlAvatar } from "../MissionControlAvatar"
-import "./MissionControlDialogue.css"
 import { Button } from "../Button"
+import "./MissionControlDialogue.css"
 
 export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
-  const { goToNextStep } = useAppContext()
+  const { goToNextStep, getIsConditionsFulfilled, currentStepId } =
+    useAppContext()
   const [isTyping, setIsTyping] = useState(true)
+
+  const isConditionFulfilled = getIsConditionsFulfilled(currentStepId)
 
   const onClick = () => {
     if (isTyping) {
@@ -26,7 +29,7 @@ export const MissionControlDialogue = ({ dialogue }: { dialogue: string }) => {
 
         <div className="mcd__title">
           <h2>Mission Control</h2>
-          <Button label="Next →" onClick={onClick} />
+          {isConditionFulfilled && <Button label="Next →" onClick={onClick} />}
         </div>
 
         <p>

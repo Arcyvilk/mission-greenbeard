@@ -8,6 +8,7 @@ export type ContextType = {
   currentStepId: string
   lastUnlockedStepId: string
 
+  getIsConditionsFulfilled: (stepId: string) => boolean
   getIsStepPassed: (stepId: string) => boolean
   getStep: (stepId: string) => Dialogue | undefined
   goToNextStep: () => void
@@ -80,6 +81,7 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     currentStepId,
     lastUnlockedStepId,
 
+    getIsConditionsFulfilled,
     getIsStepPassed,
     getStep,
     goToNextStep,

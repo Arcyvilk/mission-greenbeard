@@ -1,10 +1,24 @@
-.seat {
-  all: unset;
-  
+.seatContainer {
   position: relative;
   height: 100%;
   width: 16%;
+}
+
+.seat {
+  all: unset;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
+}
+
+.dwarf {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dwarf--hidden {
+  filter: brightness(0);
 }
 
 .seat--highlight,
