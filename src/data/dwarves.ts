@@ -15,7 +15,7 @@ export const dwarves: Dwarf[] = [
     coordinates: "dupa",
     imgSrc: "",
     lastSeen:
-      "Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We suspect he might’ve went to forage some local plants.",
+      "Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We've spotted a patch of local plants in the southern recess - we suspect he might’ve gone to forage some local plants there.",
   },
   {
     id: "driller",
@@ -23,7 +23,7 @@ export const dwarves: Dwarf[] = [
     coordinates: "dupa",
     imgSrc: "",
     lastSeen:
-      "He was last seen drilling aimlessly into a wall, mumbling to himself about mushrooms and being rich. The entry to his tunnel had been spotted high up the ceiling of the cave, carved in a white limestone.",
+      "He was last seen drilling aimlessly into a wall, mumbling to himself about mushrooms and being rich. The entry to his tunnel had been spotted high up the ceiling of the cave, carved in a white limestone. It seems he plugged the entry before his descent.",
   },
   {
     id: "baron",
@@ -31,7 +31,7 @@ export const dwarves: Dwarf[] = [
     coordinates: "dupa",
     imgSrc: "",
     lastSeen:
-      "She was last seen wandering deep in the caves, frantically yelling “MANDATE: MAKE CAGES”. Given how hostile the planet is, we would not be surprised if she stumbled upon a prison.",
+      "She’s a baroness gone rogue, and she was last seen wandering deep in the caves, frantically yelling “MANDATE: MAKE CAGES”. Our radar spotted a metallic structure similar to a birdcage in the eastern part of the cave - it's likely she went in that direction.",
   },
   {
     id: "slayer",
@@ -39,6 +39,6 @@ export const dwarves: Dwarf[] = [
     coordinates: "dupa",
     imgSrc: "",
     lastSeen:
-      "At some point he had lost his axe, stuck in a head of some sturdy octopedal monster. He was last seen chasing the monster, attempting to retrieve his weapon.",
+      "He is the group’s bodyguard, and at some point he had lost his axe, stuck in a head of some sturdy octopedal monster. He was last seen chasing the monster around, attempting to retrieve his weapon.",
   },
 ]
