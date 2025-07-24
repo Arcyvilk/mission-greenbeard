@@ -43,7 +43,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "new-recruit-01",
-    text: "For a new recruit, your performance has proven more than adequate - you managed to rescue all of our agents, who were all far more experienced than you",
+    text: "For a new recruit, your performance has proven more than adequate - you managed to rescue all of our agents, who were all far more experienced than you. Great job!",
     conditions: [],
   },
   {
@@ -58,7 +58,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "mission-02",
-    text: "Good luck!",
+    text: "Once you retrieve the treaure, input the passcode found with it below.",
     conditions: ["found-treasure"],
   },
   {
