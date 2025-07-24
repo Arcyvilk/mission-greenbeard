@@ -1,3 +1,5 @@
+import { TREASURE_COORDINATES } from "./constants"
+
 export type Dialogue = { id: string; text: string; conditions: string[] }
 
 export const dialogue: Dialogue[] = [
@@ -48,7 +50,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "new-recruit-02",
-    text: "Management believes you are qualified to finish the mission started by your compatriots and retrieve the ancient dwarven treasure. The position of the treasure had been triangulated under those coordinates: [ ]",
+    text: `Management believes you are qualified to finish the mission started by your compatriots and retrieve the ancient dwarven treasure. The position of the treasure had been triangulated under those coordinates: ${TREASURE_COORDINATES}`,
     conditions: [],
   },
   {
@@ -58,7 +60,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "mission-02",
-    text: "Once you retrieve the treaure, input the passcode found with it below.",
+    text: "Once you retrieve the treasure, input the passcode found with it below.",
     conditions: ["found-treasure"],
   },
   {

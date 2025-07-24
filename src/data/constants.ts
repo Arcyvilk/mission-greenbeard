@@ -1,0 +1,2 @@
+export const TREASURE_COORDINATES = "N?E?"
+export const TREASURE_PASSCODE = "LRAKROF"
