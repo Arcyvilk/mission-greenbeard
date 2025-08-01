@@ -11,3 +11,10 @@
   font-size: 48px;
   text-align: center;
 }
+
+.devmode {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 20px solid #0a0a0a;
+}

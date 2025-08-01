@@ -9,6 +9,8 @@ export const App = () => {
   return (
     <AppContextProvider>
       {isMobile ? <ScreenWarning /> : <Game />}
+
+      <div className="devmode" onClick={() => { localStorage.clear()}} />
     </AppContextProvider>
   )
 }
