@@ -90,7 +90,17 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "final-02",
-    text: "I invite you to celebrate your achievement in the Abyss Bar and drink to your heart’s contents!",
+    text: "For convenience, the key to the treasure has been teleported under your mousepad. Feel free to keep the contents of the chest - you've earned it, miner.",
     conditions: [],
+  },
+  {
+    id: "final-03",
+    text: "To finish your first day with a bang, I invite you to the Abyss Bar and drink to your heart’s contents! Our fridge is full of cold beer.",
+    conditions: [],
+  },
+    {
+    id: "final-04",
+    text: "HAPPY BIRTHDAY!",
+    conditions: ['byebye'],
   },
 ]
