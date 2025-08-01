@@ -1,0 +1,17 @@
+.dimmer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+.dialog {
+  top: 20%;
+  color: var(--color-primary-text);
+  background-color: var(--color-secondary-bg);
+  border: 3px groove var(--color-secondary-text);
+  width: 80%;
+}
