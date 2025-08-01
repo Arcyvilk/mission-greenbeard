@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type MouseEvent } from "react"
+import { useState, type ChangeEvent } from "react"
 import { dwarves, type DwarfId } from "../../data/dwarves"
 import { useAppContext } from "../../context"
 import "./DwarfInfo.css"
