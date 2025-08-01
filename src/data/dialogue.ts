@@ -20,7 +20,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "chef",
-    text: "Our first agent is known under the codename CHEF. Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We've spotted a patch of local plants in the southern recess - we suspect he might’ve gone to forage some local plants there.",
+    text: "Our first agent is known under the codename CHEF. Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We've spotted a patch of local plants in the southern recess - we suspect he might’ve gone there to forage.",
     conditions: [],
   },
   {
@@ -55,7 +55,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "new-recruit-03",
-    text: "Given that agent DRILLER is currently indisposed, you will need to diggy the hole yourself. A shovel will be provided to you shortly.",
+    text: "Given that agent DRILLER is currently indisposed, you will need to diggy the hole yourself. I am sure there is a shovel laying somewhere around...",
     conditions: [],
   },
   {

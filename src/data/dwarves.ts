@@ -15,7 +15,7 @@ export const dwarves: Dwarf[] = [
     coordinates: "N503E377",
     imgSrc: "",
     lastSeen:
-      "Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We've spotted a patch of local plants in the southern recess - we suspect he might’ve gone to forage some local plants there.",
+      "Just before losing contact with him he was complaining about malnutrition and squad’s rations not being seasoned enough. We've spotted a patch of local plants in the southern recess - we suspect he might’ve gone there to forage.",
   },
   {
     id: "driller",
