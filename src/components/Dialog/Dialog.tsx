@@ -1,10 +1,10 @@
-import type { MouseEvent, ReactNode } from "react"
+import type { ReactNode } from "react"
 import "./Dialog.css"
 
 type DialogProps = {
     children: ReactNode
     isOpen: boolean
-    onClose: (e: MouseEvent<HTMLDivElement>) => void
+    onClose: () => void
 }
 export const Dialog = ({ children, isOpen, onClose }: DialogProps) => {
     return (

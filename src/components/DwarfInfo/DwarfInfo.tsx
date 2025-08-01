@@ -8,7 +8,7 @@ import { Dialog } from "../Dialog"
 type DwarfInfoProps = {
   dwarfId: DwarfId
   isOpen: boolean
-  onClose: (e: MouseEvent<HTMLDivElement>) => void
+  onClose: () => void
 }
 export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
   const { findDwarf } = useAppContext()
@@ -28,8 +28,9 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
   const onSubmit = () => {
     if (submittedCoordinates !== coordinates) alert("WRONG :C")
     else {
-      findDwarf(dwarfId)
       alert("YAY!")
+      findDwarf(dwarfId)
+      onClose()
     }
   }
 
