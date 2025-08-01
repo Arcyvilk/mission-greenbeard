@@ -5,6 +5,7 @@ import { Seat } from "../../components/Seat"
 import { DwarfInfo } from "../../components/DwarfInfo"
 import type { DwarfId } from "../../data/dwarves"
 import "./Game.css"
+import { TreasureModal } from "../../components/TreasureModal"
 
 export const Game = () => {
   const { currentStepId, getIsStepPassed, getStep } = useAppContext()
@@ -37,6 +38,8 @@ export const Game = () => {
       />
 
       <MissionControlDialogue key={currentStepId} dialogue={text} />
+
+      {currentStepId === "mission-02" && <TreasureModal />}
 
       <div className="seats">
         {getIsStepPassed("chef") && (
