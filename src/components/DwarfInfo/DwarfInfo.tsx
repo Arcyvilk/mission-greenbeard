@@ -3,6 +3,7 @@ import { dwarves, type DwarfId } from "../../data/dwarves"
 import { useAppContext } from "../../context"
 import "./DwarfInfo.css"
 import { Button } from "../Button"
+import { Dialog } from "../Dialog"
 
 type DwarfInfoProps = {
   dwarfId: DwarfId
@@ -35,29 +36,21 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
   if (!isOpen) return null
 
   return (
-    <div className="dimmer" onClick={onClose}>
-      <dialog
-        className="dialog"
-        open={isOpen}
-        onClick={(e) => {
-          e.stopPropagation()
-        }}
-      >
-        <div className="row">
-          <img className="dwarf__avatar" src={imgSrc} />
-          <div className="column">
-            <h2>Dwarf name:</h2>
-            <p>{codename}</p>
-            <h2>LAST SEEN:</h2>
-            <p>{lastSeen}</p>
-            <h2>Coordinates:</h2>
-            <div className="row">
-              <input value={submittedCoordinates} onChange={onChange} />
-              <Button label="Submit coordinates" onClick={onSubmit} />
-            </div>
+    <Dialog isOpen={isOpen} onClose={onClose}>
+      <div className="row">
+        <img className="dwarf__avatar" src={imgSrc} />
+        <div className="column">
+          <h2>Dwarf name:</h2>
+          <p>{codename}</p>
+          <h2>LAST SEEN:</h2>
+          <p>{lastSeen}</p>
+          <h2>Coordinates:</h2>
+          <div className="row">
+            <input value={submittedCoordinates} onChange={onChange} />
+            <Button label="Submit coordinates" onClick={onSubmit} />
           </div>
         </div>
-      </dialog>
-    </div>
+      </div>
+    </Dialog>
   )
 }
