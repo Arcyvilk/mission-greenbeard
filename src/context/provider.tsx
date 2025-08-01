@@ -16,6 +16,7 @@ export type ContextType = {
   findDwarf: (dwarfId: DwarfId) => void
   getDwarfStatus: (dwarfId: DwarfId) => boolean
   findTreasure: () => void
+  passTest: () => void
 }
 
 export const AppContextProvider = ({ children }: PropsWithChildren) => {
@@ -98,6 +99,10 @@ export const AppContextProvider = ({ children }: PropsWithChildren) => {
     findTreasure: () => {
       window.localStorage.setItem(`found-treasure`, "true")
     },
+
+    passTest: () => {
+      window.localStorage.setItem(`passed-test`, "true")
+    }
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

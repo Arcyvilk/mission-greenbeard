@@ -4,8 +4,9 @@ import { useMemo, useState } from "react"
 import { Seat } from "../../components/Seat"
 import { DwarfInfo } from "../../components/DwarfInfo"
 import type { DwarfId } from "../../data/dwarves"
-import "./Game.css"
 import { TreasureModal } from "../../components/TreasureModal"
+import { Quiz } from "../../components/Quiz"
+import "./Game.css"
 
 export const Game = () => {
   const { currentStepId, getIsStepPassed, getStep } = useAppContext()
@@ -40,6 +41,8 @@ export const Game = () => {
       <MissionControlDialogue key={currentStepId} dialogue={text} />
 
       {currentStepId === "mission-02" && <TreasureModal />}
+
+      {currentStepId === "treasure-04" && <Quiz />}
 
       <div className="seats">
         {getIsStepPassed("chef") && (
