@@ -1,4 +1,5 @@
-import { useState, type ChangeEvent } from "react"
+import { useState } from "react"
+import { shuffle } from "lodash"
 import { useAppContext } from "../../context"
 import { quiz, type Answer } from "../../data/quiz"
 import { Dialog } from "../Dialog"
@@ -34,7 +35,7 @@ export const Quiz = () => {
             <div className="quiz__column">
                 <h2>{quizStep.question}</h2>
                 
-                { quizStep.answers.map((answer: Answer) => { 
+                { shuffle(quizStep.answers).map((answer: Answer) => { 
                     const { text, isCorrect } = answer;
                     return <Button label={text} onClick={() => checkAnswer(isCorrect)} />
                 })}
