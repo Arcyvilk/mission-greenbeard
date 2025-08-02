@@ -1,9 +1,15 @@
 .dwarf__avatar {
-  width: 128px;
-  height: 256px;
-  aspect-ratio: 1/2;
-  background-color: var(--color-primary-bg);
-  border: 2px solid ver(--color-secondary-text);
+  display: flex;
+  width: 256px;
+  height: 200px;
+  filter: brightness(0);
+  border: 8px solid var(--color-secondary-text);
+
+  img {
+    width: 256px;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .row {

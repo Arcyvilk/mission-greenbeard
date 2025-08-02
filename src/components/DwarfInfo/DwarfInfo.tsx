@@ -39,7 +39,9 @@ export const DwarfInfo = ({ dwarfId, isOpen, onClose }: DwarfInfoProps) => {
   return (
     <Dialog isOpen={isOpen} onClose={onClose}>
       <div className="row">
-        <img className="dwarf__avatar" src={imgSrc} />
+        <div className="dwarf__avatar">
+          <img src={imgSrc} />
+        </div>
         <div className="column">
           <h2>Dwarf name:</h2>
           <p>{codename}</p>

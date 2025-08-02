@@ -15,7 +15,7 @@ export const dialogue: Dialogue[] = [
   },
   {
     id: "start-03",
-    text: "All of them had shown symptoms of distractibility and dissociation shortly before their disappearance. You have to find ASAP - the planet Fornebu is known to be extremely hostile to any lifeforms.",
+    text: "All of them had shown symptoms of distractibility and dissociation shortly before their disappearance. You have to find them ASAP - the planet Fornebu is known to be extremely hostile to any lifeforms.",
     conditions: [],
   },
   {
@@ -98,9 +98,9 @@ export const dialogue: Dialogue[] = [
     text: "To finish your first day with a bang, I invite you to the Abyss Bar and drink to your heart’s contents! Our fridge is full of cold beer.",
     conditions: [],
   },
-    {
+  {
     id: "final-04",
     text: "HAPPY BIRTHDAY!",
-    conditions: ['byebye'],
+    conditions: ["byebye"],
   },
 ]
