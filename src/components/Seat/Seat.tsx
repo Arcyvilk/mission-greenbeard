@@ -28,7 +28,7 @@ export const Seat = ({
     <div className="seatContainer" style={seatStyle}>
       <img
         className={`dwarf ${isFound ? "" : "dwarf--hidden"}`}
-        src="/assets/chef.png"
+        src={`/assets/${dwarfId}.png`}
         style={dwarfStyle}
       />
 

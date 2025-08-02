@@ -56,7 +56,7 @@ export const Game = () => {
         {getIsStepPassed("driller") && (
           <Seat
             dwarfId="driller"
-            dwarfStyle={{ width: "90%", top: "17%" }}
+            dwarfStyle={{ width: "100%", top: "15%", left: "-5%" }}
             seatStyle={{ marginLeft: "0.6%", marginRight: "0.2%" }}
             onClick={onClick}
           />
@@ -64,7 +64,7 @@ export const Game = () => {
         {getIsStepPassed("baron") && (
           <Seat
             dwarfId="baron"
-            dwarfStyle={{ width: "90%", top: "17%" }}
+            dwarfStyle={{ width: "50%", top: "25%", left: "25%" }}
             seatStyle={{ marginRight: "1%" }}
             onClick={onClick}
           />
@@ -72,7 +72,7 @@ export const Game = () => {
         {getIsStepPassed("slayer") && (
           <Seat
             dwarfId="slayer"
-            dwarfStyle={{ width: "90%", top: "17%" }}
+            dwarfStyle={{ width: "90%", top: "20%", left: "5%" }}
             seatStyle={{ marginRight: "1%" }}
             onClick={onClick}
           />
